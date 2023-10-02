@@ -84,13 +84,52 @@ for i in range(len(new_word)):
 
 
 # ************ 6. Écrire un algorithme qui demande un nombre compris entre 10 et 20, jusqu'à ce que la réponse convienne. En cas de réponse supérieure à 20, on fera apparaître un message : “Plus petit !”, et inversement, “Plus grand !” si le nombre est inférieur à 10.
+""" 
+Demander le nombre
+tant que le nombre est supérieur à 20 ou inférieur à 10:
+    si le nombre est supérieur à 20:
+        imprimer le message plus petit
+    si le nombre est inférieur à 10:
+        imprimer le message "plus grand!"
+    demander une nouvelle valeur pour le nombre
+"""
+
+number = int(input("Give a number between 10 and 20: "))
+while number > 20 or number < 10:
+    if number > 20:
+        print("\nToo high")
+    if number < 10:
+        print("\ntoo small")
+    number = int(input("Give a number between 10 and 20: "))
+print(f'\nOK, your number is {number}')
 
 
 # ******* 7. Écrire un algorithme qui calcule et affiche la surface d’un triangle connaissant sa base et sa hauteur.
+""" 
+hauteur = 10
+base = 20
+aire = base * hauteur /2
+afficher l'aire
+"""
+hauteur = 10
+base = 20
+aire = base * hauteur / 2
+print("L'aire vaut: ", aire)
 
 
 # ******** 8. Écrire un algorithme qui, étant donné le prix unitaire d’un produit (hors TVA), le taux de TVA (en %) et la quantité de produit vendue à un client, calcule et affiche le prix total à payer par ce client.
-
+""" 
+prix_unitaire = 200
+taux_TVA = 20.6/100
+nombre = 30
+prix_total = nombre * prix_unitaire * (1 + taux_tva)
+afficher prix_total
+"""
+unit_price = 200
+tax_rate = 20.6 / 100
+quantity = 35
+total_price = unit_price * quantity * (1 + tax_rate)
+print("the total price is ", total_price)
 
 # ******* 9.Écrire un algorithme qui, étant donné les résultats (note entière sur 20) de trois examens passés par un étudiant (exprimés par six nombres, à savoir, la note et la pondération de chaque examen), calcule et affiche la moyenne globale exprimée en pourcentage.
 
