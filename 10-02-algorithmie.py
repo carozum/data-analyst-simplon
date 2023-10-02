@@ -67,8 +67,10 @@ print("\n*******************\n")
 mot = "hello"
 pour i de 1 à longueur de mot:
     count = 1
-    pour j de i+1 à longueur de mot - 1
-    ajouter la lettre au dictionnaire si elle n'existe pas avec 
+    pour j de i+1 à longueur de mot:
+        si la lettre à la position i est égale à la lettre à la position j
+            ajouter 1 au compteur
+    imprimer la lettre et le compteur
 """
 
 new_word = "carolinefaure"
