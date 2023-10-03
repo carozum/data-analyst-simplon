@@ -1,4 +1,4 @@
-
+import math
 
 """
 Exercices de pseudo code / algorithmie
@@ -83,6 +83,25 @@ for i in range(len(new_word)):
     print(new_word[i], count)
 
 
+""" 
+TODO à coder
+lettres = liste vide
+occurences = liste vide
+pour i de 1 à taille du mot:
+    Si ième lettre est dans lettre:
+        position = ième lettre dans la liste
+        occurences[position] += 1
+    Sinon :
+        ajouter la Ième lettre du mot dans lettres
+        ajouter 1 à la dernière position de occurences
+
+"""
+
+
+""" 
+Encore mieux avec un dictionnaire... TODO à coder.
+"""
+
 # ************ 6. Écrire un algorithme qui demande un nombre compris entre 10 et 20, jusqu'à ce que la réponse convienne. En cas de réponse supérieure à 20, on fera apparaître un message : “Plus petit !”, et inversement, “Plus grand !” si le nombre est inférieur à 10.
 """ 
 Demander le nombre
@@ -132,15 +151,79 @@ total_price = unit_price * quantity * (1 + tax_rate)
 print("the total price is ", total_price)
 
 # ******* 9.Écrire un algorithme qui, étant donné les résultats (note entière sur 20) de trois examens passés par un étudiant (exprimés par six nombres, à savoir, la note et la pondération de chaque examen), calcule et affiche la moyenne globale exprimée en pourcentage.
+notes = [17, 12, 9]
+coefs = [3, 1, 2]
+somme_notes = 0
+somme_coef = 0
+for i in range(len(notes)):
+    somme_notes += notes[i] * coefs[i]
+    somme_coef += coefs[i]
+moyenne_ponderee = somme_notes / somme_coef
+print("La moyenne pondérée est ", moyenne_ponderee)
 
 
 # ********* 10. Écrire un algorithme qui affiche toutes les combinaisons de deux nombre entre 0 et 99, dans l’ordre croissant au format “00 01, 00 02, 00 03 … 00 99, 01 02, … 97 99, 98 99”. Ne pas oublier les espaces et virgules !
 
+combinaisons = ""
+for i in range(100):
+    if i < 10:
+        for j in range(i+1, 100):
+            if j < 10:
+                combinaisons += f"0{i} 0{j}, "
+            else:
+                combinaisons += f"0{i} {j}, "
+    else:
+        for j in range(i+1, 100):
+            combinaisons += f"{i} {j}, "
+print(combinaisons)
 
-# ******* 11. Écrire un algorithme qui calcule la somme des chiffres d’un nombre entier de 3 chiffres. Réflexion : l’algorithme est-il aussi valide pour les entiers inférieurs à 100 ?
+
+# ******* 11. Écrire un algorithme qui calcule la somme des chiffres d’un nombre entier de 3 chiffres. Réflexion : l’algorithme est-il aussi valide pour les entiers inférieurs à 100 ou supérieur à 1000?
+nombre = 1225
+nombre_str = str(nombre)
+somme = 0
+
+for char in nombre_str:
+    somme += int(char)
+print(somme)
+
+# manière algorithmique
+centaine = nombre // 100
+dizaine = (nombre - centaine * 100) // 10
+unite = nombre - centaine * 100 - dizaine * 10
+print(centaine * 100 + dizaine * 10 + unite)
+print(centaine + dizaine + unite)
+
+print(math.log10(nombre))
+
+# TODO a coder !! quel que soit le nombre en entrée 12345 par exemple
+# def count(number):
+#     # avec le log en base 10
+#     print(math.log10(number))
+#     # nb_chiffres = log(number)/log(10)
+#     centaine = nombre // 100
+#     dizaine = (nombre - centaine * 100) // 10
+#     unite = nombre - centaine * 100 - dizaine * 10
+#     # print(centaine * 100 + dizaine * 10 + unite)
+#     # print(centaine + dizaine + unite)
 
 
 # ******* 12. Écrire un algorithme itératif et un algorithme récursif qui affiche la somme de 1 à n
+# itératif
+somme = 0
+for loop in range(11):
+    somme += loop
+print(somme)
+
+# récursif
+
+n = int(input("Quel nombre ?"))
+sum = 0
+i = n
+while i != 0:
+    sum += i
+    i -= 1
+print(sum)
 
 
 # ******** 13. Écrire un algorithme itératif et un algorithme récursif qui affiche le produit de 1 à n (ce qu’on appelle la factorielle n et noté n!)
